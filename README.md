@@ -33,12 +33,12 @@ copy and paste the URL shown below into address bar on your browser.
 
 - Click `Add Payment` to create new payment method.
 
-- Refer to the datail below; kindly insert details into the respective fields: 
-    a. Name: Molpay
-    b. Processor: MOLPay Malaysia Online Payment
-    c. Template:(optional)
-    d. Payment Category: Internet Payments
-    e. Another fields is optional
+- Refer to the datail below, kindly insert details into the respective fields: 
+    1. Name: Molpay
+    2. Processor: MOLPay Malaysia Online Payment
+    3. Template:(optional)
+    4. Payment Category: Internet Payments
+    5. Another fields is optional
 
 - Click on `[Create]` button on the bottom to save all changes.
 
@@ -46,9 +46,9 @@ copy and paste the URL shown below into address bar on your browser.
 
 - Click `Configure`.
 
-- Fill in the details accordingly. 
-    a. MOLPay Merchant ID : Your MOLPay Merchant ID 
-    b. MOLPay Verify Key  : Your MOLPay Verify key. Check your merchant profile to have this key.
+- Fill in the details accordingly: 
+    1. MOLPay Merchant ID : Your MOLPay Merchant ID 
+    2. MOLPay Verify Key  : Your MOLPay Verify key. Check your merchant profile to have this key.
 
 - Save all the changes. You’re Done!
 
