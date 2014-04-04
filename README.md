@@ -27,6 +27,7 @@ copy and paste the URL shown below into address bar on your browser.
 (The purpose of this action is to register MOLPay Payment plugin into the database).
     
      `http://www.your-cscart.com/setup_molpay.php`
+
     ***Replace `www.your-cscart.com` with URL address of your shopping cart.
 
 - Login as CS-Cart Store Admin, go to `Administration` > `Payment Methods`.
