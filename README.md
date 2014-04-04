@@ -24,14 +24,14 @@ Please ensure the file permission is correct. It's recommended to CHMOD to 644
 
 - Go to any browser (Mozilla, Google Chrome, Internet Explorer, etc), 
 copy and paste the URL shown below into address bar on your browser. 
-(The purpose of this action is to register MOLPay Payment plugin into the database.)
+(The purpose of this action is to register MOLPay Payment plugin into the database).
     
-     'http://www.your-cscart.com/setup_molpay.php'
-    ***Replace 'www.your-cscart.com' with URL address of your shopping cart.
+     `http://www.your-cscart.com/setup_molpay.php`
+    ***Replace `www.your-cscart.com` with URL address of your shopping cart.
 
-- Login as CS-Cart Store Admin, go to Administration > Payment Methods.
+- Login as CS-Cart Store Admin, go to `Administration` > `Payment Methods`.
 
-- Click Add Payment to create new payment method.
+- Click `Add Payment` to create new payment method.
 
 - Refer to the datail below; kindly insert details into the respective fields. 
     a-Name: Molpay
