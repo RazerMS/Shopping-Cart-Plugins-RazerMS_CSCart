@@ -11,7 +11,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
 		$vkey = base64_decode($_GET['key']);
 		//------ below don't change ---------------
 		$tranID =$_POST['tranID'];
-		$orderid =$_REQUEST['order_id'];////$_POST['orderid'];
+		$orderid =$_POST['orderid'];
 		$status =$_POST['status'];
 		$domain =$_POST['domain'];
 		$amount =$_POST['amount'];
