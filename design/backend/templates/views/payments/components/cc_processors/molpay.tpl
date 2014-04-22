@@ -58,7 +58,7 @@
         <div class="controls">
             <select name="payment_data[processor_params][statuses][completed]" id="elm_molpay_completed">
                 {foreach from=$statuses item="s" key="k"}
-                <option value="{$k}" {if (isset($processor_params.statuses.completed) && $processor_params.statuses.completed == $k) || (!isset($processor_params.statuses.completed) && $k == 'P')}selected="selected"{/if}>{$s}</option>
+                    <option value="{$k}" {if (isset($processor_params.statuses.completed) && $processor_params.statuses.completed == $k) || (!isset($processor_params.statuses.completed) && $k == 'P')}selected="selected"{/if}>{$s}</option>
                 {/foreach}
             </select>
         </div>
@@ -69,7 +69,7 @@
         <div class="controls">
             <select name="payment_data[processor_params][statuses][pending]" id="elm_molpay_pending">
                 {foreach from=$statuses item="s" key="k"}
-                <option value="{$k}" {if (isset($processor_params.statuses.pending) && $processor_params.statuses.pending == $k) || (!isset($processor_params.statuses.pending) && $k == 'O')}selected="selected"{/if}>{$s}</option>
+                    <option value="{$k}" {if (isset($processor_params.statuses.pending) && $processor_params.statuses.pending == $k) || (!isset($processor_params.statuses.pending) && $k == 'O')}selected="selected"{/if}>{$s}</option>
                 {/foreach}
             </select>
         </div>
@@ -80,7 +80,7 @@
         <div class="controls">
             <select name="payment_data[processor_params][statuses][canceled_reversal]" id="elm_molpay_canceled_reversal">
                 {foreach from=$statuses item="s" key="k"}
-                <option value="{$k}" {if (isset($processor_params.statuses.canceled_reversal) && $processor_params.statuses.canceled_reversal == $k) || (!isset($processor_params.statuses.canceled_reversal) && $k == 'I')}selected="selected"{/if}>{$s}</option>
+                    <option value="{$k}" {if (isset($processor_params.statuses.canceled_reversal) && $processor_params.statuses.canceled_reversal == $k) || (!isset($processor_params.statuses.canceled_reversal) && $k == 'I')}selected="selected"{/if}>{$s}</option>
                 {/foreach}
             </select>
         </div>
@@ -92,7 +92,7 @@
         <div class="controls">
             <select name="payment_data[processor_params][statuses][processed]" id="elm_molpay_processed">
                 {foreach from=$statuses item="s" key="k"}
-                <option value="{$k}" {if (isset($processor_params.statuses.processed) && $processor_params.statuses.processed == $k) || (!isset($processor_params.statuses.processed) && $k == 'P')}selected="selected"{/if}>{$s}</option>
+                    <option value="{$k}" {if (isset($processor_params.statuses.processed) && $processor_params.statuses.processed == $k) || (!isset($processor_params.statuses.processed) && $k == 'P')}selected="selected"{/if}>{$s}</option>
                 {/foreach}
             </select>
         </div>
