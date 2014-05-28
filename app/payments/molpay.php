@@ -18,7 +18,8 @@ if (defined('PAYMENT_NOTIFICATION')) {
         $currency =$_POST['currency'];
         $appcode =$_POST['appcode'];
         $paydate =$_POST['paydate'];
-        $skey =$_POST['skey'];
+        $skey =$_POST['molpay_skey']; //CS-Cart 4.1.5 $_POST['skey'] conflict with system parameter, change to $_POST['molpay_skey']
+        
         // All undeclared variables below are coming from POST method
         $key0 = md5( $tranID.$orderid.$status.$domain.$amount.$currency );
         $key1 = md5( $paydate.$domain.$key0.$appcode.$vkey );
@@ -88,9 +89,16 @@ EOT;
             }
 	}
 	//index.php?dispatch=payment_notification.return&payment=paypal&order_id=115
-	$success_url = fn_url("payment_notification.return&payment=molpay&order_id={$order_id}&key=$base64", AREA, 'current');	
-	//$allowed_id = db_get_field("update user_id FROM ?:orders WHERE user_id = ?i AND order_id = ?i", 1, 121);
-	//echo "ggg".$allowed_id;
+
+    // CS-Cart 4.1.5 Conflict with $_POST['skey'], will not return to commented $success_url below instead redirected to special page to change the parameter skey to molpay_skey
+	//$success_url = fn_url("payment_notification.return&payment=molpay&order_id={$order_id}&key=$base64", AREA, 'current');
+    $pos = strpos($_SERVER['REQUEST_URI'],'index.php');
+    if($pos == true)
+        $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], 0, $pos);
+
+    $success_url = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}".(substr($_SERVER['REQUEST_URI'],0,1)=='/' ? $_SERVER['REQUEST_URI'] : '/'.$_SERVER['REQUEST_URI'])."app/payments/molpay/return_molpay.php?order_id={$order_id}&key=$base64";	
+	
+    //$allowed_id = db_get_field("update user_id FROM ?:orders WHERE user_id = ?i AND order_id = ?i", 1, 121);
 	
 	//$success_url = fn_url("checkout.complete&payment=molpay&order_id={$order_id}", AREA, 'current');
 	
@@ -104,7 +112,7 @@ EOT;
 	<input type="hidden" name="order_id" value="$order_id" />
 	<input type="hidden" name="dispatch" value="checkout.complete" />
 	<input type="hidden" name="complete" value="Y" />
-        <input type="hidden" name="payment" value="molpay" />
+    <input type="hidden" name="payment" value="molpay" />
 	<input type="hidden" name="returnurl" value="$success_url">
 	<input type="hidden" name="status" value="O" />
 	

@@ -1,5 +1,5 @@
 <div class="control-group">
-    <label class="control-label" for="account">MOLPay Merchantssss ID:</label>
+    <label class="control-label" for="account">MOLPay Merchant ID:</label>
     <div class="controls">
         <input type="text" name="payment_data[processor_params][merchantID]" id="merchantID" value="{$processor_params.merchantID}" >
     </div>

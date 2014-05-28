@@ -31,12 +31,11 @@ foreach($_POST as $k => $v)
 }
 
 echo "<html>
-    <body>
+    <body onLoad='document.molpay_form.submit();'>
     <form action='{$redirect_url}' method='post' name='molpay_form'>";
 foreach($_POST as $k => $v)
 {
   echo "<input type='hidden' name='{$k}' value='{$v}'>";
 }
-echo '<input type="submit" value="submit">';
 echo '</form></body></html>';
 ?>
