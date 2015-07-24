@@ -12,46 +12,11 @@ Use at your own risk. Please backup any critical data before proceeding. For any
 assistance, please email support@molpay.com
 
 
-Installations for CS-Cart version 4.x.x and above
+Installations for CS-Cart MOLPay Plugin/Extension
 ------------------------------------------------------
+[CS-Cart Version 4.3.1 and above] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.3.x-and-above)
 
-- Download this plugin, Extract/Unzip the files. 
-
-- Upload or copy those file and folder into your CS-Cart root folder
-
-- (Skip this if your CS-Cart is not hosted in UNIX environment). 
-Please ensure the file permission is correct. It's recommended to CHMOD to 644
-
-- Go to any browser (Mozilla, Google Chrome, Internet Explorer, etc), 
-copy and paste the URL shown below into address bar on your browser. 
-(The purpose of this action is to register MOLPay Payment plugin into the database).
-    
-     `http://www.your-cscart.com/setup_molpay.php`
-
-    ***Replace `www.your-cscart.com` with URL address of your shopping cart.
-
-- Login as CS-Cart Store Admin, go to `Administration` > `Payment Methods`.
-
-- Click `Add Payment` to create new payment method.
-
-- Refer to the datail below, kindly insert details into the respective fields: 
-    1. Name: Molpay
-    2. Processor: MOLPay Malaysia Online Payment
-    3. Template:(optional)
-    4. Payment Category: Internet Payments
-    5. Another fields is optional
-
-- Click on `[Create]` button on the bottom to save all changes.
-
-- Click on `edit` button at “MOLPay Malaysia Online Payment” Payment methods.
-
-- Click `Configure`.
-
-- Fill in the details accordingly: 
-    1. MOLPay Merchant ID : Your MOLPay Merchant ID 
-    2. MOLPay Verify Key  : Your MOLPay Verify key. Check your merchant profile to have this key.
-
-- Save all the changes. You’re Done!
+[CS-Cart Version 4.2.3 and below] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.2.3-and-below)
 
 
 Contribution
