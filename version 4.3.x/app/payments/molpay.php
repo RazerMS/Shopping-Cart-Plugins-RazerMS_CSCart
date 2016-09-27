@@ -35,14 +35,14 @@ if (defined('PAYMENT_NOTIFICATION')) {
 
         if ($status == "00") {
             //success transaction
-            fn_change_order_status($orderid, 'P', '', false);
-            fn_finish_payment($orderid, $_POST, false);
-            fn_order_placement_routines('route', $orderid, false);
+            fn_change_order_status($orderid, 'P', '');
+            fn_finish_payment($orderid, $_POST);
+            fn_order_placement_routines('route', $orderid);
         } else {
             //failed transaction
-            fn_change_order_status($orderid, 'F', '', false);
-            fn_finish_payment($orderid, $_POST, false);
-            fn_order_placement_routines('route', $orderid, false);
+            fn_change_order_status($orderid, 'F', '');
+            fn_finish_payment($orderid, $_POST);
+            fn_order_placement_routines('route', $orderid);
         }
     }
     exit;
