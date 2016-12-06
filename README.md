@@ -16,20 +16,6 @@ Installations for CS-Cart MOLPay Plugin/Extension
 ------------------------------------------------------
 [CS-Cart Version 4.3.1 and above] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.3.x-and-above)
 
-**Attention :**
-
-Since CS-Cart Version 4.1.5 have a ``skey`` conflict with system parameter, then please add this snippet **&& empty($_REQUEST['domain']) && empty($_REQUEST['currency'])** into your cscart root folder (``app``/``controllers``/``frontend``/``init.php``)
-
-``Instruction``
-
-1. Open file ``init.php`` then find **if(!empty($_REQUEST['skey']))** on line 24.
-
-2. Paste the script after **if(!empty($_REQUEST['skey']))**.
-
-3. Result will be like this : <br/>
-**if(!empty($_REQUEST['skey']) && empty($_REQUEST['domain']) && empty($_REQUEST['currency']))**.
-
-
 [CS-Cart Version 4.2.3 and below] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.2.3-and-below)
 
 
