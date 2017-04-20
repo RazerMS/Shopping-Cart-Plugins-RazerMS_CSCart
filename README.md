@@ -15,17 +15,12 @@ assistance, please email support@molpay.com
 
 Installations for CS-Cart MOLPay Plugin/Extension
 ------------------------------------------------------
+[CS-Cart Version 4.5.x]           (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Seamless-Integration-Version-4.5.x)
+
 [CS-Cart Version 4.3.1 and above] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.3.x-and-above)
 
 [CS-Cart Version 4.2.3 and below] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.2.3-and-below)
 
-Fill in return URL and Callback URL with your shopping cart URL.
-    
-``Return URL        : http://xxxxxxxxxxxxxx/index.php?route=payment/molpay/return_ipn``
-
-``Notification URL  : http://xxxxxxxxxxxxxx/index.php?route=payment/molpay/notification_ipn``
-
-``Callback URL      : http://xxxxxxxxxxxxxx/index.php?route=payment/molpay/callback_ipn`` 
 
 Contribution
 ------------
