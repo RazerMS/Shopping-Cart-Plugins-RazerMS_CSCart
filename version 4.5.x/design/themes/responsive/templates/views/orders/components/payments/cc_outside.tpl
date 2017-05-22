@@ -23,8 +23,8 @@ padding: 7px;
 
 
 <!--popup molpay seamless-->
-{script src="https://www.onlinepayment.com.my/MOLPay/API/seamless/3.11/js/MOLPay_seamless.deco.js"}
-{script src="js/tygh/molpay.js?v=999"}
+{script src="https://www.onlinepayment.com.my/MOLPay/API/seamless/latest/js/MOLPay_seamless.deco.js"}
+{script src="js/tygh/molpay.js"}
 
 
 
