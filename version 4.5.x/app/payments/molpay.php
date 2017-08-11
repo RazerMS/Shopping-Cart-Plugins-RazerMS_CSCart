@@ -189,7 +189,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     }
     
 
-    $form_data['mpscancelurl'] = "http://seamless.fayraboutique.com/checkout/";		header('Content-Type: application/json');
+    $form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";		header('Content-Type: application/json');
     echo json_encode($form_data);
     
 }
