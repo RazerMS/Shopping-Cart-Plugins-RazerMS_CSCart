@@ -15,6 +15,8 @@ assistance, please email support@molpay.com
 
 Installations for CS-Cart MOLPay Plugin/Extension
 ------------------------------------------------------
+[CS-Cart Version 4.6.x]           (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Seamless-Integration-Version-4.6.x)
+
 [CS-Cart Version 4.5.x]           (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Seamless-Integration-Version-4.5.x)
 
 [CS-Cart Version 4.3.1 and above] (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.3.x-and-above)
