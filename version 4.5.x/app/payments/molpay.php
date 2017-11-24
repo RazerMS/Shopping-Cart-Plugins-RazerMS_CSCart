@@ -39,7 +39,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
             //success transaction
             fn_change_order_status($orderid, 'P', '', false);
             fn_finish_payment($orderid, $_POST, false);
-            fn_order_placement_routines('route', $orderid, false);
+            fn_order_placement_routines('route', $orderid);
         } else {
             //failed transaction
             fn_change_order_status($orderid, 'F', '', false);
