@@ -41,7 +41,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
             //success transaction
             fn_change_order_status($orderid, 'P', '', false);
             fn_finish_payment($orderid, $_POST, false);
-            fn_order_placement_routines('route', $orderid, false);
+            fn_order_placement_routines('route', $orderid);
         } else if( $status == "22") {
             //for cash channel only
             fn_change_order_status($orderid, 'O', '', false);
