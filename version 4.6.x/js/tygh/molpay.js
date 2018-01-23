@@ -84,7 +84,7 @@
                                 for(var j=0; j<arrayChannel.length; j++){
                                         $("#payment_method").append("<div class='col-md-2 col-xs-6 marginbttm text-center "+currency+"'><label class='hand' for='payment"+arrayChannel[j]+"'><img src='images/"+arrayChannel[j]+".jpg' /></label><br /><input style='margin: 8px 0px 0px 50px;' type='radio' name='payment_options' id='payment"+arrayChannel[j]+"' value='"+arrayChannel[j]+"' required/></div>");
                                 }
-                        }, 1000);
+                        }, 3000);
                 });
 
                 $(document).on("change", "#ab_currency", function(){
@@ -102,7 +102,9 @@
         }
 
         $(document).ready(function(){
-                loadPaymentMethod();
+                if($('#payment_12').is(':checked')) {
+                        loadPaymentMethod();
+                }
                 $(document).on('change', 'input:radio[name="payment_id"]', function(){
                         if($('#payment_12').is(':checked')) {
                                 loadPaymentMethod();
