@@ -102,11 +102,14 @@
         }
 
         $(document).ready(function(){
-                if($('#payment_12').is(':checked')) {
+                var label = $("label[for='"+$('input[type=radio][name=payment_id]:checked').attr('id')+"']");
+                if(label.text().toUpperCase().indexOf("MOLPAY") !== -1) {
                         loadPaymentMethod();
                 }
+
                 $(document).on('change', 'input:radio[name="payment_id"]', function(){
-                        if($('#payment_12').is(':checked')) {
+                        var label = $("label[for='"+$('input[type=radio][name=payment_id]:checked').attr('id')+"']");
+                        if(label.text().toUpperCase().indexOf("MOLPAY") !== -1) {
                                 loadPaymentMethod();
                         }
                 });
