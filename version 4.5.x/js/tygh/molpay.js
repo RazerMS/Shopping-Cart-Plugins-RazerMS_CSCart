@@ -102,17 +102,21 @@
         }
 
         $(document).ready(function(){
-                var label = $("label[for='"+$('input[type=radio][name=payment_id]:checked').attr('id')+"']");
-                if(label.text().toUpperCase().indexOf("MOLPAY") !== -1) {
-                        loadPaymentMethod();
-                }
-
-                $(document).on('change', 'input:radio[name="payment_id"]', function(){
+                if ($('input:radio[name="payment_id"]').length) {
                         var label = $("label[for='"+$('input[type=radio][name=payment_id]:checked').attr('id')+"']");
                         if(label.text().toUpperCase().indexOf("MOLPAY") !== -1) {
                                 loadPaymentMethod();
                         }
-                });
+
+                        $(document).on('change', 'input:radio[name="payment_id"]', function(){
+                                var label = $("label[for='"+$('input[type=radio][name=payment_id]:checked').attr('id')+"']");
+                                if(label.text().toUpperCase().indexOf("MOLPAY") !== -1) {
+                                        loadPaymentMethod();
+                                }
+                        });
+                } else {
+                        loadPaymentMethod();
+                }
         });
 
         $(document).on('click','.btn, .btn-primary', function(e){
