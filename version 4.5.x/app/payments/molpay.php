@@ -9,7 +9,7 @@ if (!defined('BOOTSTRAP')) {
 
 // Return from molpay website
 if (defined('PAYMENT_NOTIFICATION')) {
- 
+	
     if ($mode == 'return') {
         $payment_id = db_get_field("SELECT payment_id FROM ?:orders WHERE order_id = ?i", $_REQUEST['orderid']);
         $processor_data = fn_get_payment_method_data($payment_id);
@@ -132,7 +132,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     if ($order_info['s_country'] != 'US' && $order_info['s_country'] != 'CA') {
         $__sstate = "XX";
     }
-    $is_test = ($processor_data['processor_params']['mode'] == 'test') ? 'Y' : 'N';
+    //$is_test = ($processor_data['processor_params']['mode'] == 'test') ? 'Y' : 'N';
     
     //enable/disable status
     //$statusmode = ($processor_data['processor_params']['status']) == 'enable') ? 'Y' : 'N';
@@ -144,7 +144,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     $molpay_secretkey = $processor_data['processor_params']['secret_key'];
 
     $current_location = Registry::get('config.current_location');
-
+    
     $molpay_currency = $processor_data['processor_params']['currency'];
     $molpay_channel = $processor_data['processor_params']['channel'];
 
@@ -189,7 +189,10 @@ if (defined('PAYMENT_NOTIFICATION')) {
     }
     
 
-    $form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";		header('Content-Type: application/json');
+    //$form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";		
+    $form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";
+	
+	header('Content-Type: application/json');
     echo json_encode($form_data);
     
 }

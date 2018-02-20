@@ -23,7 +23,12 @@ padding: 7px;
 
 
 <!--popup molpay seamless-->
-{script src="https://www.onlinepayment.com.my/MOLPay/API/seamless/latest/js/MOLPay_seamless.deco.js"}
+{if $cart.payment_method_data.processor_params.mode eq 'live'}
+	{script src="https://sandbox.molpay.com/MOLPay/API/seamless/latest/js/MOLPay_seamless.deco.js"}
+{else}
+	{script src="https://www.onlinepayment.com.my/MOLPay/API/seamless/latest/js/MOLPay_seamless.deco.js"}
+{/if}
+
 {script src="js/tygh/molpay.js"}
 
 

@@ -98,7 +98,7 @@
                                         $("div#channel").append("<li style='list-style-type:none;'><input style='margin-right:10px;float:left;' type='checkbox' name='payment_data[processor_params][channel][]' value='"+index+"' />"+value+"</li>");
                                 });
                         }
-                });
+                });                
         }
 
         $(document).ready(function(){
