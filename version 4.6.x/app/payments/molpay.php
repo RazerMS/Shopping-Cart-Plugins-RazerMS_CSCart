@@ -203,7 +203,9 @@ if (defined('PAYMENT_NOTIFICATION')) {
     }
     
 
-    $form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";		header('Content-Type: application/json');
+    //$form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";
+    $form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";		
+    header('Content-Type: application/json');
     echo json_encode($form_data);
 }
 exit;
