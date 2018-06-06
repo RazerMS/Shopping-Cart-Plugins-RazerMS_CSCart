@@ -12,7 +12,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     
     $payment_id = db_get_field("SELECT payment_id FROM ?:orders WHERE order_id = ?i", $_REQUEST['orderid']);
     $processor_data = fn_get_payment_method_data($payment_id);
-    $vkey = $processor_data['processor_params']['verify_key'];  
+    $vkey = $processor_data['processor_params']['secret_key'];  
   
     if ($mode == 'return') {
 
@@ -146,7 +146,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     if ($order_info['s_country'] != 'US' && $order_info['s_country'] != 'CA') {
         $__sstate = "XX";
     }
-    $is_test = ($processor_data['processor_params']['mode'] == 'test') ? 'Y' : 'N';
+    //$is_test = ($processor_data['processor_params']['mode'] == 'test') ? 'Y' : 'N';
     
     //enable/disable status
     //$statusmode = ($processor_data['processor_params']['status']) == 'enable') ? 'Y' : 'N';
@@ -156,6 +156,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     $molpay_merchantID = $processor_data['processor_params']['merchant_id'];
     $molpay_verifykey = $processor_data['processor_params']['verify_key'];
     $molpay_secretkey = $processor_data['processor_params']['secret_key'];
+    $molpay_url = $processor_data['processor_params']['mode'];
 
     $current_location = Registry::get('config.current_location');
 
@@ -172,9 +173,11 @@ if (defined('PAYMENT_NOTIFICATION')) {
     $base64 = base64_encode($molpay_vcode);
 
     $return_url = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "?dispatch=payment_notification.return&payment=molpay&order_id=" . $orderid;
-
+	//$jsUrl = $molpay_url.'MOLPay/API/seamless/latest/js/MOLPay_seamless.deco.js';
+	//$this->context->smarty->assign('result', $jsUrl);
+	//echo $jsUrl;exit;
+	//$smarty->assign("jsU", $molpay_url); 
     $form_data = array(
-        
         'status' => true,
         'mpsmerchantid' => $molpay_merchantID,
         'mpschannel' => $_POST['payment_options'],
@@ -189,8 +192,8 @@ if (defined('PAYMENT_NOTIFICATION')) {
         'dispatch' => "checkout.complete",
         'complete' => "Y",
         'mpsreturnurl' => $return_url,
+		'molUrl' => $molpay_url,
     );
-
     if (!empty($order_info['products'])) {
         //if no description about the product, then create it
         foreach ($order_info['products'] as $k => $v) {
@@ -201,11 +204,11 @@ if (defined('PAYMENT_NOTIFICATION')) {
         }
         $form_data['mpsbill_desc'] = $product_name;
     }
-    
-
-    //$form_data['mpscancelurl'] = "http://{yourdomainame}/checkout/";
-    $form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";		
-    header('Content-Type: application/json');
+	
+	   	
+	$form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";
+	
+	header('Content-Type: application/json');
     echo json_encode($form_data);
 }
 exit;
