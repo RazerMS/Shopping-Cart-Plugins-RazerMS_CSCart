@@ -16,10 +16,17 @@
 </div>
 
 <div class="control-group">
+    <label class="control-label" for="secret_key">Secret Key:</label>
+    <div class="controls">
+        <input type="text" name="payment_data[processor_params][secret_key]" id="secret_key" value="{$processor_params.secret_key}"  size="60">
+    </div>
+</div>
+
+<div class="control-group">
     <label class="control-label" for="ab_currency">Currency</label>
     <div class="controls">
         <select name="payment_data[processor_params][currency]" id="ab_currency">
-
+            <option value="">Please Select</option>
             <option value="MYR" {if $processor_params.currency == "MYR"} selected="selected"{/if}>{__("currency_code_myr")}</option>
             <option value="THB" {if $processor_params.currency == "THB"} selected="selected"{/if}>{__("currency_code_thb")}</option>
             <option value="VND" {if $processor_params.currency == "VND"} selected="selected"{/if}>{("Vietnam Dong")}</option>
@@ -33,5 +40,13 @@
     <div class="controls" id="channel"></div>
 </div>
 
-
-{script src="js/tygh/molpay.js?v=3"}
+<div class="control-group">
+    <label class="control-label" for="ab_mode">Test/Live Mode</label>
+    <div class="controls">
+      <select name="payment_data[processor_params][mode]" id="ab_mode">
+            <option value="test"{if $processor_params.mode == "test"} selected="selected"{/if}>{__("Test")}</option>
+            <option value="live"{if $processor_params.mode == "live"} selected="selected"{/if}>{__("Live")}</option>
+        </select>
+    </div>
+</div>
+{script src="js/tygh/molpay.js?n=1"}
