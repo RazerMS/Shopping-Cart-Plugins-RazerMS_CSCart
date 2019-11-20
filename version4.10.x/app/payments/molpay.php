@@ -190,7 +190,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
     );
 
     if ($molpay_url == 'live'){
-        $url = "https://onlinepayment.com.my/MOLPay/pay/" . $molpay_merchantID . "/";
+        $url = "https://www.onlinepayment.com.my/MOLPay/pay/" . $molpay_merchantID . "/";
     }else if($molpay_url == 'test'){
         $url = "https://sandbox.molpay.com/MOLPay/pay/" . $molpay_merchantID . "/";
     }
