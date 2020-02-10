@@ -13,7 +13,7 @@ Use at your own risk. Please backup any critical data before proceeding. For any
 assistance, please email support@molpay.com
 
 
-Installations for CS-Cart MOLPay Plugin/Extension
+Installations for CS-Cart Razer Merchant Services Plugin/Extension
 ------------------------------------------------------
 
 [CS-Cart Version 4.10.x]          (https://github.com/MOLPay/CSCart_Plugin/wiki/CS-Cart-Version-4.10.x)
