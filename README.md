@@ -1,6 +1,6 @@
 Razer Merchant Services CS-Cart Plugin
 ==================
-<img src="https://user-images.githubusercontent.com/38641542/74150135-3fcb5a00-4c44-11ea-9927-413606d3a630.jpg">
+<img src="https://user-images.githubusercontent.com/38641542/74416395-0bdc7880-4e80-11ea-8fe7-98724d28afa8.jpg">
 
 Razer Merchant Services Plugin for CS-Cart Shopping Cart develop by Razer Merchant Services technical team.
 
