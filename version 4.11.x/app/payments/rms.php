@@ -135,7 +135,6 @@ if (defined('PAYMENT_NOTIFICATION')) {
     }
     $__sstate = @$order_info['s_state'];
     if ($order_info['s_country'] != 'US' && $order_info['s_country'] != 'CA') {
-    echo print_r($_POST,1);
         $__sstate = "XX";
     }
     
@@ -188,7 +187,7 @@ if (defined('PAYMENT_NOTIFICATION')) {
         $url = "https://sandbox.molpay.com/MOLPay/pay/" . $molpay_merchantID . "/";
     }
 
-	$product_name="";
+    $product_name="";
     if (!empty($order_info['products'])) {
         //if no description about the product, then create it
         foreach ($order_info['products'] as $k => $v) {
@@ -197,13 +196,13 @@ if (defined('PAYMENT_NOTIFICATION')) {
 
             $product_name = $product_name . str_replace(', ', ' ', $v['product'] . " x " . $v['amount']) . "\n";
         }
-        $form_data['mpsbill_desc'] = $product_name;
+        $form_data['bill_desc'] = $product_name;
     }
-	   	
-	$form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";
+        
+    $form_data['mpscancelurl'] = "http" . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . (substr($_SERVER['REQUEST_URI'], 0, 1) == '/' ? $_SERVER['REQUEST_URI'] : '/' . $_SERVER['REQUEST_URI']) . "checkout/";
 
     fn_create_payment_form($url, $form_data, 'RMS', false);
-	
+    
 }
 exit;
 ?>
