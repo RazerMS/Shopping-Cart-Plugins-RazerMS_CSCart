@@ -15,6 +15,7 @@ assistance, please email support-sa@razer.com
 
 Installations for CS-Cart Razer Merchant Services Plugin/Extension
 ------------------------------------------------------
+[CS-Cart Version 4.11.x]          (https://github.com/RazerMS/CSCart_Plugin/wiki/CS-Cart-Version-4.11.x)
 
 [CS-Cart Version 4.10.x]          (https://github.com/RazerMS/CSCart_Plugin/wiki/CS-Cart-Version-4.10.x)
 
